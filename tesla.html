@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Tesla Clone</title>
+    <style>
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .home1 {
+            position: absolute;
+            gap: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin-top: 0px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            padding: 10px 40px;
+        }
+
+        .left {
+            flex: 1;
+        }
+
+        .center {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex: 2;
+        }
+
+        .right {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+            margin-right: 100px;
+            flex: 1;
+        }
+
+
+        .header :hover {
+            background-color: aliceblue;
+            cursor: pointer;
+            width: auto;
+        }
+
+       
+
+        .home1 img {
+            width: 100%;
+        }
+
+        .text1 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 160px;
+            left: 500px;
+            font-size: 70px;
+        }
+
+        .text2 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 270px;
+            left: 515px;
+            font-size: 25px;
+        }
+
+        .text3 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 310px;
+            left: 450px;
+            font-size: 25px;
+        }
+
+        .text4 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 850px;
+            left: 500px;
+            font-size: 70px;
+        }
+
+        .text5 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 960px;
+            left: 515px;
+            font-size: 25px;
+        }
+
+        .text6 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 1470px;
+            left: 500px;
+            font-size: 70px;
+        }
+
+        .text7 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 1580px;
+            left: 515px;
+            font-size: 25px;
+        }
+
+        .text8 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 2090px;
+            left: 500px;
+            font-size: 70px;
+        }
+
+        .text9 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 2200px;
+            left: 515px;
+            font-size: 25px;
+        }
+
+        .text10 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 2670px;
+            left: 350px;
+            font-size: 70px;
+        }
+
+        .text11 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 2780px;
+            left: 515px;
+            font-size: 25px;
+        }
+
+        .text12 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 3290px;
+            left: 500px;
+            font-size: 70px;
+        }
+
+        .text13 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 3400px;
+            left: 493px;
+            font-size: 25px;
+        }
+
+        .text14 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 3830px;
+            left: 450px;
+            font-size: 70px;
+        }
+
+        .text15 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 3950px;
+            left: 515px;
+            font-size: 25px;
+        }
+
+        .text16 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 4700px;
+            left: 470px;
+            font-size: 70px;
+        }
+
+        .text17 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 4820px;
+            left: 515px;
+            font-size: 25px;
+        }
+
+        .text18 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 5380px;
+            left: 450px;
+            font-size: 70px;
+        }
+
+        .text19 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: white;
+            top: 5500px;
+            left: 515px;
+            font-size: 25px;
+        }
+
+        .order {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 380px;
+            left: 320px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: white;
+            background-color: cornflowerblue;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .order:hover {
+            background-color: deepskyblue;
+        }
+
+        .learn {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 380px;
+            left: 670px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: black;
+            background-color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .learn:hover {
+            background-color: wheat;
+        }
+
+        .order22 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 1800px;
+            left: 320px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: white;
+            background-color: cornflowerblue;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .order22:hover {
+            background-color: deepskyblue;
+        }
+
+        .learn22 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 1800px;
+            left: 670px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: black;
+            background-color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .learn22:hover {
+            background-color: wheat;
+        }
+
+        .order1 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 1200px;
+            left: 320px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: white;
+            background-color: cornflowerblue;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .order1:hover {
+            background-color: deepskyblue;
+        }
+
+        .learn1 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 1200px;
+            left: 670px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: black;
+            background-color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .learn1:hover {
+            background-color: wheat;
+        }
+
+        .order2 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 2400px;
+            left: 320px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: white;
+            background-color: cornflowerblue;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .order2:hover {
+            background-color: deepskyblue;
+        }
+
+        .learn2 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 2400px;
+            left: 670px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: black;
+            background-color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .learn2:hover {
+            background-color: wheat;
+        }
+
+        .order3 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 3000px;
+            left: 320px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: white;
+            background-color: cornflowerblue;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .order3:hover {
+            background-color: deepskyblue;
+        }
+
+        .learn3 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 3000px;
+            left: 670px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: black;
+            background-color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .learn3:hover {
+            background-color: wheat;
+        }
+
+        .order4 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 3600px;
+            left: 320px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: white;
+            background-color: cornflowerblue;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .order4:hover {
+            background-color: deepskyblue;
+        }
+
+        .learn4 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 3600px;
+            left: 670px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: black;
+            background-color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .learn4:hover {
+            background-color: wheat;
+        }
+
+        .order5 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 4400px;
+            left: 320px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: white;
+            background-color: cornflowerblue;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .order5:hover {
+            background-color: deepskyblue;
+        }
+
+        .learn5 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 4400px;
+            left: 670px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: black;
+            background-color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .learn5:hover {
+            background-color: wheat;
+        }
+
+        .order6 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 5150px;
+            left: 320px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: white;
+            background-color: cornflowerblue;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .order6:hover {
+            background-color: deepskyblue;
+        }
+
+        .learn6 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 5150px;
+            left: 670px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: black;
+            background-color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .learn6:hover {
+            background-color: wheat;
+        }
+
+        .shop {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            color: white;
+            top: 5900px;
+            left: 480px;
+            font-size: 25px;
+            height: 50px;
+            width: 300px;
+            color: white;
+            background-color: cornflowerblue;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .shop:hover {
+            background-color: deepskyblue;
+        }
+
+        .text {
+            position: relative;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-left: 200px;
+        }
+
+        .footer {
+            display: flex;
+            position: relative;
+            margin-left: 450px;
+            gap: 20px;
+        }
+
+        .footer :hover {
+            cursor: pointer;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="home1">
+            <div class="image1">
+
+                <img src="Homepage-Model-3-Desktop-US.png" alt="Tesla Homepage">
+                <div class="header">
+                    <div class="left">
+                        <h2 class="tesla">Tesla</h2>
+                    </div>
+                    <div class="center">
+                        <h3 class="head1">Vehicles</h3>
+                        <h3 class="head2">Energy</h3>
+                        <h3 class="head3">Charging</h3>
+                        <h3 class="head4">Discover</h3>
+                        <h3 class="head5">Shop</h3>
+                    </div>
+                    <div class="right icon">
+                        <i class="fa-regular fa-circle-question"></i>
+                        <i class="fa-solid fa-globe"></i>
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                </div>
+
+                <h1 class="text1">Model Y</h1>
+                <h1 class="text2">Starting at $41,4901</h1>
+                <h1 class="text3">After $7,500 Federal Tax Credit</h1>
+                <button class="order">Order Now</button>
+                <button class="learn">Learn More</button>
+            </div>
+            <div class="image2">
+                <img src="Homepage-Model-S-Desktop-US.png" height="600px" width="1000px">
+                <h1 class="text4">Model S</h1>
+                <h1 class="text5">Starting at $40,5062</h1>
+                <button class="order1">Order Now</button>
+                <button class="learn1">Learn More</button>
+            </div>
+            <div class="image3">
+                <img src="Homepage-Model-X-Desktop-US.png" height="600px" width="1000px">
+                <h1 class="text6">Model X</h1>
+                <h1 class="text7">0% APR Available</h1>
+                <button class="order22">Order Now</button>
+                <button class="learn22">Learn More</button>
+
+            </div>
+            <div class="image4">
+                <img src="Homepage-Model-3-Desktop-US.png" height="600px" width="1000px">
+                <h1 class="text8">Model 3</h1>
+                <h1 class="text9">Starting at $50,3500</h1>
+                <button class="order2">Order Now</button>
+                <button class="learn2">Learn More</button>
+            </div>
+            <div class="image5">
+                <img src="Homepage-Cybertruck-Hero-US-Desktop-v4.jpg" height="600px" width="1000px">
+                <h1 class="text10">Cybertruck-Hero-US</h1>
+                <h1 class="text11">Free Supercharging Ending Soon</h1>
+                <button class="order3">Order Now</button>
+                <button class="learn3">Learn More</button>
+            </div>
+            <div class="image6">
+                <img src="Homepage-Model-S-Desktop-US.png" height="600px" width="1000px">
+                <h1 class="text12">Model S</h1>
+                <h1 class="text13">Lease from $799/month</h1>
+                <button class="order4">Order Now</button>
+                <button class="learn4">Learn More</button>
+            </div>
+            <div class="image7">
+                <img src="Homepage-SolarPanels-01-Desktop" alt="">
+                <h1 class="text14">SolarPanels</h1>
+                <h1 class="text15">Starting at $33,4443</h1>
+                <button class="order5">Order Now</button>
+                <button class="learn5">Learn More</button>
+            </div>
+            <div class="image8">
+                <img src="Homepage-SolarRoof-Desktop-US.png" alt="">
+                <h1 class="text16">SolarRoof</h1>
+                <h1 class="text17">Starting at $30,4901</h1>
+                <button class="order6">Order Now</button>
+                <button class="learn6">Learn More</button>
+            </div>
+            <div class="image9">
+                <img src="Homepage-Accessories-Desktop-US.png" alt="">
+                <h1 class="text18">Accessories</h1>
+                <h1 class="text19">Starting at $4,3201</h1>
+                <button class="shop">Shop Now</button>
+
+            </div>
+            <iframe width="vw" height="615" src="https://www.youtube.com/embed/iPJDW5EaIzE?si=zMekEpv0En1s70Cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br><br>
+            <div class="text">
+                <p> 1 Before the Federal Tax Credit, Model Y Long Range AWD starts at $50,630. Price includes
+                    Destination
+                    and Order Fees but exclude taxes and other fees. Subject to change.<br> Vehicle shown has upgrades
+                    that
+                    will increase the price. The $7,500 Federal Tax Credit is available to eligible buyers and subject
+                    to MSRP caps. Not all vehicles, customers or<br> finance options will be eligible.<a href="#">Terms
+                        Apply</a><br><br>
+
+                    2 Before the Federal Tax Credit, Cybertruck Long Range starts at $72,235. Price includes Destination
+                    and Order Fees but exclude taxes and other fees. Subject to change.<br> Vehicle shown has upgrades
+                    that
+                    will increase the price. The $7,500 federal tax credit is available to eligible buyers and subject
+                    to MSRP caps. Not all vehicles, customers or<br> finance options will be eligible.<a href="#">Terms
+                        Apply</a></p>
+            </div>
+            
+            <div class="footer">
+                <p>Tesla &copy; 2025</p>
+                <p>Locations</p>
+                <p>Contact</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
