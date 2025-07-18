@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            color: black;
+            background-color: grey;
+            position: relative;
+            top: 50px;
+            height: 70px;
+            width: 200px;
+            align-items: center;
+            justify-content: center;
+            border: white;
+            border-radius: 20px;
+            font-size: 30px;
+
+
+        }
+        .middle{
+            padding: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <center><button onclick="randomColor()" class="btn btn-warning btn-outline-dark rounded-pill">Click here</button></center>
+    <div class="middle">
+    </div>
+    <script>
+    function randomColor(){
+        let blank=""
+        let hexcode="0123456789ABCDEF"
+        for(let i=0;i<6;i++){
+        let jk =Math.floor(Math.random()*15)
+        blank = blank + hexcode[(Math.floor(Math.random()*16))]
+        }
+        let color = '#' + blank
+        document.body.style.backgroundColor=color
+    }
+    </script>
+</body>
+</html>

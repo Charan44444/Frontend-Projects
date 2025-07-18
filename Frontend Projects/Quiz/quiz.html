@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .quiz-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      display: inline-block;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ddd;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz Game</h1>
+    <div id="question-container">
+      <p id="question">Loading question...</p>
+      <div id="answers"></div>
+    </div>
+    <button id="next-btn">Next</button>
+    <div id="score-container" class="hide">
+      <h2>Your Score: <span id="score"></span>/10</h2>
+      <button onclick="startQuiz()">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "Who have 100 centuries in cricket?",
+        answers: ["Ronaldo", "Sachin", "Kohli", "Ricky Pointing"],
+        correct: 1
+      },
+      {
+        question: "Which planet is known as the Red Planet?",
+        answers: ["Earth", "Venus", "Mars", "Jupiter"],
+        correct: 2
+      },
+      {
+        question: "What is the largest mammal?",
+        answers: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+        correct: 1
+      },
+      {
+        question: "How many continents are there?",
+        answers: ["5", "6", "7", "8"],
+        correct: 2
+      },
+      {
+        question: "What is the chemical symbol for water?",
+        answers: ["H2o", "o2", "C2o", "Hc3"],
+        correct: 0
+      },
+      {
+        question: "What is the largest desert in the world?",
+        answers: ["Antarctica", "Sahara", "Thar", "None"],
+        correct: 0
+      },
+      {
+        question: "Which gas do plants absorb?",
+        answers: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Helium"],
+        correct: 2
+      },
+      {
+        question: "What is 10 * 10?",
+        answers: ["100", "1000", "10", "20"],
+        correct: 0
+      },
+      {
+        question: "Which ocean is the largest?",
+        answers: ["Atlantic", "Indian", "Pacific", "Arctic"],
+        correct: 2
+      },
+      {
+        question: "Which language is used for web pages?",
+        answers: ["HTML", "Python", "C++", "Java"],
+        correct: 0
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const answersEl = document.getElementById("answers");
+    const nextBtn = document.getElementById("next-btn");
+    const scoreContainer = document.getElementById("score-container");
+    const scoreEl = document.getElementById("score");
+
+    function startQuiz() {
+      currentQuestion = 0;
+      score = 0;
+      scoreContainer.classList.add("hide");
+      nextBtn.style.display = "inline";
+      showQuestion();
+    }
+
+    function showQuestion() {
+      let q = questions[currentQuestion];
+      questionEl.textContent = q.question;
+      answersEl.innerHTML = "";
+      q.answers.forEach((answer, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = answer;
+        btn.onclick = () => selectAnswer(index);
+        answersEl.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(index) {
+  if (index === questions[currentQuestion].correct) {
+    score++;
+  }
+  currentQuestion++;
+  nextBtn.style.display = "inline"; // Show the Next button after selecting an answer
+}
+
+nextBtn.addEventListener("click", () => {
+  if (currentQuestion < questions.length) {
+    showQuestion();
+    nextBtn.style.display = "none"; // Hide the Next button until an answer is selected
+  } else {
+    showScore();
+  }
+});
+
+    function showScore() {
+      questionEl.textContent = "";
+      answersEl.innerHTML = "";
+      nextBtn.style.display = "none";
+      scoreContainer.classList.remove("hide");
+      scoreEl.textContent = score;
+    }
+
+    nextBtn.addEventListener("click", () => {
+        if (currentQuestion < questions.length) {
+            showQuestion();
+        } else {
+            showScore();
+        }
+    });
+
+    startQuiz();
+  </script>
+</body>
+</html>

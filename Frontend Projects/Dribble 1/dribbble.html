@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nixto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        .container {
+            height: 95vh;
+            width: 900px;
+            position: absolute;
+            left: 200px;
+            background-image: linear-gradient(grey,cadetblue);
+            border-radius: 20px;
+        }
+
+        .container2 {
+            height: 90vh;
+            width: 800px;
+            background-image: linear-gradient(300deg,wheat,white);
+            border-radius: 30px;
+            position: absolute;
+            left: 50px;
+            top: 15px;
+        }
+
+        .header {
+            display: flex;
+        }
+
+        .crex {
+            position: absolute;
+            left: 25px;
+            height: 30px;
+            width: 80px;
+            border: 1px solid black;
+            border-radius: 30px;
+            justify-content: center;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .Dashboard {
+            height: 30px;
+            width: 460px;
+            border: 1px solid black;
+            border-radius: 30px;
+            display: flex;
+            font-display: none;
+            position: relative;
+            left: 165px;
+            list-style: none;
+            top: 3px;
+            align-items: center;
+            gap: 10px;
+            padding: 0 10px;
+        }
+
+        /* .dash:hover{
+            background-color: black;
+            color: aliceblue;
+            cursor: pointer;
+            height: 30px;
+            border-radius: 30px;
+            width: 150px;
+        } */
+        .settings {
+            height: 30px;
+            width: 70px;
+            border: 1px solid black;
+            border-radius: 30px;
+            position: relative;
+            left: 172px;
+            top: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+        }
+
+        .notif {
+            display: flex;
+            position: relative;
+            top: 18px;
+            left: 173px;
+            height: 30px;
+            width: 30px;
+            border-radius: 100px;
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile {
+            display: flex;
+            position: relative;
+            top: 18px;
+            left: 175px;
+            height: 30px;
+            width: 30px;
+            border-radius: 100px;
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome {
+            position: relative;
+            margin-left: 10px;
+            top: -20px;
+        }
+
+        .inter {
+            position: relative;
+            display: flex;
+            top: -30px;
+        }
+
+        .interview {
+            position: relative;
+            left: 10px;
+        }
+
+        .hired {
+            position: relative;
+            left: 40px;
+        }
+
+        .project {
+            position: relative;
+            left: 90px;
+        }
+
+        .output {
+            position: relative;
+            left: 205px;
+        }
+
+        .multiple {
+            position: relative;
+            left: 330px;
+            display: flex;
+            gap: 3px;
+            align-items: center;
+            bottom: 20px;
+        }
+
+        .add {
+            position: relative;
+            left: 355px;
+            display: flex;
+            gap: 3px;
+            align-items: center;
+            bottom: 20px;
+        }
+
+        .progress {
+            position: relative;
+            left: 370px;
+            display: flex;
+            gap: 3px;
+            align-items: center;
+            bottom: 20px;
+        }
+
+        .bars {
+            display: flex;
+            /* padding-left: 5px; */
+        }
+
+        .bar1 {
+            position: relative;
+            height: 30px;
+            width: 70px;
+            border-radius: 30px;
+            border: 1px solid black;
+            left: 10px;
+            bottom: 85px;
+            text-align: center;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            background-color: bisque;
+            padding-left: 10px;
+        }
+
+        .bar2 {
+            position: relative;
+            height: 30px;
+            width: 70px;
+            border-radius: 30px;
+            border: 1px solid black;
+            left: 20px;
+            bottom: 85px;
+            text-align: center;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            background-color: chocolate;
+            padding-left: 10px;
+        }
+
+        .bar3 {
+            position: relative;
+            height: 30px;
+            width: 170px;
+            border-radius: 30px;
+            border: 1px solid black;
+            left: 30px;
+            bottom: 85px;
+            text-align: center;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            background-color: darkcyan;
+            padding-left: 10px;
+        }
+
+        .bar4 {
+            position: relative;
+            height: 30px;
+            width: 60px;
+            border-radius: 30px;
+            border: 1px solid black;
+            left: 40px;
+            bottom: 85px;
+            text-align: center;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            background-color: grey;
+            padding-left: 10px;
+        }
+
+        .emp1,
+        .emp2,
+        .emp3 {
+            display: flex;
+            position: relative;
+            bottom: 90px;
+            left: 140px;
+            padding: 0 7px;
+        }
+        .boxes{
+            display: flex;
+            left: 10px;
+            position: relative;
+            bottom: 85px;
+        }
+        .box1, .box2, .box3{
+            display: grid;
+            height: 170px;
+            width: 195px;
+            border: 1px solid white;
+            border-radius: 30px;
+        }
+        .box1 img, .box2 img, .box3 img, .box4 img, .box5 img, .box6 img{
+            border-radius: 30px;
+        }
+
+        .box4{
+            display: grid;
+            height: 330px;
+            width: 180px;
+            border: 1px solid white;
+            border-radius: 30px;
+        }
+        .boxes2{
+            display: flex;
+            position: relative;
+            bottom: 245px;
+            left: 10px;
+        }
+        .box5{
+            display: grid;
+            height: 160px;
+            width: 195px;
+            border: 1px solid white;
+            border-radius: 30px;         
+        }
+        .box6{
+            display: grid;
+            height: 160px;
+            width: 392px;
+            border: 1px solid white;
+            border-radius: 30px;  
+            position: relative; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container2">
+            <div class="header">
+                <h3 class="crex">Crexito</h3>
+                <ul class="Dashboard">
+                    <li class="dash">Dashboard</li>
+                    <li>People</li>
+                    <li>Hiring</li>
+                    <li>Devices</li>
+                    <li>Apps</li>
+                    <li>Salary</li>
+                    <li>Calender</li>
+                    <li>reviews</li>
+                </ul>
+                <div class="settings"><i class="fa-solid fa-gear"></i>
+                    <p>setting</p>
+                </div>
+                <div class="notif"><i class="fa-solid fa-bell"></i></div>
+                <div class="profile"><i class="fa-solid fa-user"></i></div>
+
+            </div>
+            <div class="welcome">
+                <h1>Welcome in, Nixtio</h1>
+            </div>
+            <div class="inter">
+                <div class="interview">Interviews</div>
+                <div class="hired">Hired</div>
+                <div class="project">Project time</div>
+                <div class="output">Output</div>
+                <div class="multiple"><i class="fa-solid fa-users"></i>
+                    <h1>78</h1>
+                </div>
+                <div class="add"><i class="fa-solid fa-user-plus"></i>
+                    <h1>56</h1>
+                </div>
+                <div class="progress"><i class="fa-solid fa-circle-half-stroke"></i>
+                    <h1>203</h1>
+                </div>
+            </div>
+            <div class="bars">
+                <div class="bar1">
+                    <h3>15%</h3>
+                </div>
+                <div class="bar2">
+                    <h3>15%</h3>
+                </div>
+                <div class="bar3">
+                    <h3>60%</h3>
+                </div>
+                <div class="bar4">
+                    <h3>10%</h3>
+                </div>
+                <p class="emp1">employees</p>
+                <p class="emp2">Hirings</p>
+                <p class="emp3">Projects</p>
+            </div>
+            <div class="boxes">
+                <div class="box1"><img src="/assets/box1.png" height="170" width="195" ></div>
+                <div class="box2"><img src="/assets/box2.png" height="170" width="195" ></div>
+                <div class="box3"><img src="/assets/box3.png" height="170" width="195" ></div>
+                <div class="box4"><img src="/assets/box4.png" height="330" width="180" ></div>
+            </div>
+            <div class="boxes2">
+                <div class="box5"><img src="/assets/box5.png" height="160" width="195" ></div>
+                <div class="box6"><img src="/assets/box6.png" height="160" width="392" ></div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>

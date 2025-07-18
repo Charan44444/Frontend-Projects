@@ -1,0 +1,343 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Airbnb Clone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #333;
+    }
+
+    header {
+      background-color : light;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(77, 52, 52, 0.1);
+      position: fixed;
+      width: 100%;
+      height: 150px;
+      padding: 20px 40px;
+      z-index: 1000;
+    }
+
+    .p1 {
+      display: flex;
+      align-items: center;
+    }
+
+    .p1 img {
+      height: 50px;
+      width: auto;
+      gap: 10px;
+      position: relative;
+      bottom: 20px;
+    }
+
+    .p2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+
+    }
+    .uphome{
+        position: relative;
+        bottom: 30px;
+        left: 20px;
+    }
+
+    .uphome, .downhome {
+      position: relative;
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      justify-content: center;
+      align-items: center;
+      right: -20px;
+    }
+
+    .downhome {
+      border: 1px solid #ba5555;
+      border-radius: 30px;
+      padding: 10px 20px;
+      background-color: rgb(232, 217, 217);
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      bottom: 20px;
+    }
+    .uphome{
+        color: black;
+    }
+
+    .bor {
+      padding: 5px 10px;
+      border-right: 1px solid #ccc;
+    }
+
+    .bor:last-child {
+      border-right: none;
+    }
+
+    .listings {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .card {
+      top: 100px;
+      background-color: black;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-info {
+      padding: 15px;
+    }
+
+    .card-info h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #ccc;
+    }
+
+    .card-info p {
+      font-size: 14px;
+      color: aliceblue;
+    }
+    .p3 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  bottom: 15px;
+  padding-left: 10px;
+}
+
+.host-btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  background: none;
+}
+.host-btn :hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.globe {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.menu-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 18px;
+}
+
+.user-icon {
+  font-size: 18px;
+  background-color: #888;
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+    footer {
+      background-color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      box-shadow: 0 -1px 4px rgba(0,0,0,0.05);
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="p1">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1280px-Airbnb_Logo_B%C3%A9lo.svg.png" alt="Logo">
+    </div>
+    <div class="p2">
+      <ul class="uphome">
+        <li>Home</li>
+        <li>Experiences</li>
+      </ul>
+      <ul class="downhome">
+        <li class="bor">Where<br>Search Destination</li>
+        <li class="bor">Check in<br>Add Dates</li>
+        <li class="bor">Check out<br>Add Dates</li>
+        <li class="bor">Who<br>Add Guests</li>
+      </ul>
+    </div>
+    <div class="p3">
+      <button class="host-btn">Airbnb your home</button>
+      <span class="globe">🌐</span>
+      <div class="menu-profile">
+        <span class="menu-icon">≡</span>
+        <span class="user-icon">👤</span>
+      </div>
+    </div>
+  </header><br><br><br><br><br>
+
+  <section class="listings">
+    <div class="card">
+      <img src="assets/4b9a04f3-5c1d-4e09-bca5-6e2306b3577e.jpeg" alt="House 1">
+      <div class="card-info">
+        <h3>Wooden Lights</h3>
+        <p>Price:$120</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/2644049c-1945-4c67-a555-b8582ecb06d6.jpeg" alt="Villa">
+      <div class="card-info">
+        <h3>Ethnic Wall Decor</h3>
+        <p>Price:$300</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://media.designcafe.com/wp-content/uploads/2022/09/19152202/luxury-home-decor.jpg" alt="Cabin">
+      <div class="card-info">
+        <h3>Party Couch</h3>
+        <p>Price:$1500</p>
+      </div>
+    </div>
+    <div class="card">
+        <img src="assets/27479b77-873b-4b3d-98c8-68a9bb447ddf.jpeg" alt="House 1">
+        <div class="card-info">
+          <h3>Hyderabad, India</h3>
+          <p>Price:$980</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbJQhn6zjR9PbR-OemP2GqIUzRbVHMdT9yow&s" alt="Cabin">
+        <div class="card-info">
+          <h3>Wall Lights</h3>
+          <p>Price:$90</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/54dc7749-e85b-4a25-be7b-da715097e5cf.jpeg" alt="Cabin">        <div class="card-info">
+          <h3>Moinabad, India</h3>
+          <p>Price:$650</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/5e05e069-10d1-4928-9db4-787e0dbeb753.jpeg" alt="Cabin">
+        <div class="card-info">
+          <h3>Wooden Table</h3>
+          <p>Colorado · $1200/night</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/6be9f1d8-bbd2-4222-9d35-65aab019be28.jpg" alt="Cabin">
+        <div class="card-info">
+          <h3>Hyderabad, India</h3>
+          <p>Price:$1900/night</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt5IylOuo-9OmWpRi6a3uNZ4vxNGlkdkEeQw&s" alt="Cabin">
+        <div class="card-info">
+          <h3>Plant Pot(CLAY)</h3>
+          <p>Price:$350</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://media.istockphoto.com/id/1255835530/photo/modern-custom-suburban-home-exterior.jpg?s=612x612&w=0&k=20&c=0Dqjm3NunXjZtWVpsUvNKg2A4rK2gMvJ-827nb4AMU4=" alt="Cabin">
+        <div class="card-info">
+          <h3>Walk Way plants</h3>
+          <p>Price:$95-each</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://assets.architecturaldigest.in/photos/62026064b5d9eefa7e4e2ddf/4:3/w_1439,h_1079,c_limit/How%20to%20furnish%20your%20home%20on%20a%20budget.jpg" alt="Cabin">
+        <div class="card-info">
+          <h3>Square Seat</h3>
+          <p>Price:$750</p>
+        </div>
+      </div>
+      <!-- <div class="card">
+        <img src="https://vgocart.com/wp-content/uploads/2022/02/home-decor-tips-decorate-our-home-best-home-decors-buy-online.jpg" alt="Cabin">
+        <div class="card-info">
+          <h3>Wall Curtains</h3>
+          <p>Price: $150-length</p>
+        </div>
+      </div> -->
+      <div class="card">
+        <img src="assets/aa118214-1c7c-40c7-92b6-e7f4082e3a34.jpeg" alt="Cabin">
+        <div class="card-info">
+          <h3>Koheda, India</h3>
+          <p>Price:$250</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/ba03e1b7-d11e-42f9-a225-0092d9fd6fe2.jpg" alt="Cabin">
+        <div class="card-info">
+          <h3>Hyderabad, India</h3>
+          <p>Price:$1600</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/eb030e01-b785-4092-8df4-c8bb12579697.jpeg" alt="Cabin">
+        <div class="card-info">
+          <h3>Kalankari Pillows</h3>
+          <p>Price:$550</p>
+        </div>
+      </div>
+     
+  </section>
+
+  <footer>
+    &copy; Copy Rights are reserved by Airbnb
+    <ul>
+        <li>ABOUT US</li>
+        <li>SEARCHING FOR PLACES?</li>
+        <li>HELP</li>
+    </ul>
+  </footer>
+
+</body>
+</html>

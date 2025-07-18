@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Up Seven Down</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .seven-up,
+        .seven,
+        .seven-down {
+            height: 200px;
+            width: 200px;
+            background-color: cadetblue;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            font-size: 3rem;
+            margin-top: 40px;
+            border-radius: 30px;
+        }
+
+        .text {
+            position: relative;
+            top: 50px;
+            margin-left: 530px;
+        }
+
+        .wallet {
+            text-align: center;
+            font-size: 2.5rem;
+        
+        }
+        .container{
+            height: 100vh;
+            width: 100vw;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="wallet">
+            Wallet: <span id="wallet">100</span>
+        </div>
+        <div class="choices">
+            <div class="seven-up">7 Up</div>
+            <div class="seven">7</div>
+            <div class="seven-down">7 Down</div>
+        </div>
+        <div class="text">
+            <input type="text" name="enter" id="enter" placeholder="enter the amount">
+            <div class="result" id="result"></div>
+
+            <button type="submit">Submit</button>
+        </div>
+        <script>
+             let diceSound = new Audio('dice-142528.mp3');
+            let wallet = 100;
+
+            const walletDisplay = document.getElementById('wallet');
+            const resultDisplay = document.getElementById('result');
+            const betInput = document.getElementById('enter');
+
+            document.querySelector('.seven-up').addEventListener('click', () => playGame('up'));
+            document.querySelector('.seven').addEventListener('click', () => playGame('seven'));
+            document.querySelector('.seven-down').addEventListener('click', () => playGame('down'));
+
+            function playGame(choice) {
+                
+                const bet = parseInt(betInput.value);
+                if (isNaN(bet) || bet <= 0) {
+                    alert('Please enter a valid bet amount.');
+                    return;
+                }
+                if (bet > wallet) {
+                    alert('Insufficient funds.');
+                    return;
+                }
+
+                const die1 = Math.floor(Math.random() * 6) + 1;
+                const die2 = Math.floor(Math.random() * 6) + 1;
+                const total = die1 + die2;
+
+                let won = false;
+
+                if (choice === 'up' && total > 7) won = true;
+                else if (choice === 'seven' && total === 7) won = true;
+                else if (choice === 'down' && total < 7) won = true;
+
+                resultDisplay.innerHTML = `
+                 <h2>You rolled:</h2>
+                <img src="dice${die1}.png" alt="Die 1" width="100px">
+                <img src="dice${die2}.png" alt="Die 2" width="100px">
+                
+
+                <p>Total: ${total}</p>
+                <p>${won ? `You won $${bet}!` : `You lost $${bet}.`}</p>
+            `;
+                wallet += won ? bet : -bet;
+                walletDisplay.textContent = wallet;
+            }
+            
+
+            function disableGame() {
+                document.querySelector('.seven-up').style.pointerEvents = 'none';
+                document.querySelector('.seven').style.pointerEvents = 'none';
+                document.querySelector('.seven-down').style.pointerEvents = 'none';
+            }
+
+            function resetGame() {
+                wallet = 100;
+                walletDisplay.textContent = wallet;
+                resultDisplay.textContent = "Game reset. Good luck!";
+                document.querySelector('.seven-up').style.pointerEvents = 'auto';
+                document.querySelector('.seven').style.pointerEvents = 'auto';
+                document.querySelector('.seven-down').style.pointerEvents = 'auto';
+                betInput.value = '';
+            }
+        </script>
+    </div>
+</body>
+
+</html>
